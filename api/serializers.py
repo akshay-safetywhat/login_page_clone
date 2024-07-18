@@ -40,7 +40,7 @@ class ProfileSerializer(ModelSerializer):
 class UserOptionsSerializer(ModelSerializer):
     class Meta:
         model = UserOptions
-        fields = ('title', 'description', 'value')
+        fields = ['title', 'description', 'value']
 
 
 class BlacklistedAccessTokenSerializer(ModelSerializer):
