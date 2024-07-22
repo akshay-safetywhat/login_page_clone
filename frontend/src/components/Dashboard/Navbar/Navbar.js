@@ -1,0 +1,15 @@
+export default function Navbar() {
+    return (
+  
+)}
+
+
+export default function Sidebar() {
+  return (
+    <div class="sidenav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+    </div>
+)};
