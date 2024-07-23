@@ -6,3 +6,14 @@
 body {
     background-color: RGB(46, 52, 64);
   }
+
+  .home-page {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    padding: 40px;
+    background-color: RGB(46, 52, 64);
+    height: 0px;
+    overflow: hidden;
+  }
+  

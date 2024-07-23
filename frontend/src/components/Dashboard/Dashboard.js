@@ -1,31 +1,17 @@
 import React from 'react';
-import './Navbar/Navbar'
-import Navbar from './Navbar/Navbar';
+import Sidebar from './Sidebar/Sidebar';
+import { Outlet } from 'react-router-dom';
+import './Dashboard.css'; // Import CSS for layout
 
-const App = () => {
-  const token = localStorage.getItem('access');
-
-
-  useEffect(() => {
-    axios
-      .get(OPTION_URL, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        setTiles(response.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError("Error fetching data: " + error.message);
-        setLoading(false);
-      });
-  }, [OPTION_URL, token]);
+const Dashboard = () => {
   return (
-    
-    <Navbar />
+    <div className="dashboard">
+      <Sidebar />
+      <div className="dashboard-content">
+        <Outlet />
+      </div>
+    </div>
   );
 };
 
-export default App;
+export default Dashboard;

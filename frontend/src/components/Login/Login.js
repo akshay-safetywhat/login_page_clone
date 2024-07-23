@@ -33,7 +33,7 @@ const Login = () => {
       localStorage.setItem('access', access);
       localStorage.setItem('refresh', refresh);
       localStorage.setItem('Tokenexpiry', exp);
-      console.log(localStorage.getItem('Tokenexpiry'))
+      // console.log(localStorage.getItem('Tokenexpiry'))
 
       console.log('Tokens set in local storage');
       navigate('/home');

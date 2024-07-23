@@ -1,0 +1,22 @@
+/* UserDetails.css */
+
+.user-details {
+    padding: 20px;
+  }
+  
+  .user-details-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-details-table th,
+  .user-details-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .user-details-table th {
+    background-color: #f4f4f4;
+  }
+  

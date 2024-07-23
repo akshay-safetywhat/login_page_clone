@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../api/axios';
 import { useNavigate } from 'react-router-dom';
-import Tile from './Tile/Tile'; // Assuming Tile component
+import Tile from './Tile/Tile'; 
 import './Home.css';
 
 const HomePage = () => {
-  const [tiles, setTiles] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
-  const [error, setError] = useState(null); // Add error state
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null);
   const OPTION_URL = '/api/user_options/';
   const token = localStorage.getItem('access');
   const navigate = useNavigate();
-
 
   useEffect(() => {
     axios
@@ -21,7 +20,7 @@ const HomePage = () => {
         },
       })
       .then((response) => {
-        setTiles(response.data);
+        setData(response.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -29,10 +28,13 @@ const HomePage = () => {
         setLoading(false);
       });
   }, [OPTION_URL, token]);
+  // console.log(data)
 
   const handleTileClick = (tile) => {
-    console.log('Tile clicked:', tile); 
-    // navigate('/dashboard');
+    // console.log('Tile clicked:', tile);
+    navigate('/dashboard', {
+      state: { tile }
+    });
   };
 
   if (loading) return <p>Loading...</p>;
@@ -41,20 +43,16 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <div>
-        <h1></h1>
-      </div>
-      <div>
+        <h1>👋</h1>
         <h1 className='hello'>Hello !</h1>
       </div>
       <div className="tiles">
-        {tiles.map((tile, index) => (
+        {data.map((tile, index) => (
           <Tile
             key={index}
-            // Uncomment and provide icon prop if needed
-            // icon={tile.icon}
             title={tile.title}
             description={tile.description}
-            onClick={() => handleTileClick(tile)} // Pass tile data to handler
+            onClick={() => handleTileClick(tile)}
           />
         ))}
       </div>

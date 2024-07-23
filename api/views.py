@@ -12,7 +12,7 @@ from rest_framework.exceptions import APIException, AuthenticationFailed
 # from rest_framework.authentication import TokenAuthentication, BasicAuthentication
 from rest_framework_simplejwt.authentication import JWTAuthentication
 # from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken, OutstandingToken
-from rest_framework.decorators import permission_classes, authentication_classes
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from .serializers import UserSerializer, ProfileSerializer, BlacklistedAccessTokenSerializer, UserOptionsSerializer
 from .models import CustomUser, BlacklistedAccessToken, UserOptions
 from .authentication import CustomJWTAuthentication
@@ -57,7 +57,6 @@ class LoginAPIView(APIView):
         ),
         responses={200: 'Token generated successfully', 400: 'Invalid credentials'}
     )
-
     # @permission_classes([AllowAny])
     def post(self, request):
         username = request.data.get('username')
