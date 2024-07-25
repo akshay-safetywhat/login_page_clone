@@ -1,60 +1,101 @@
+/* Sidebar.css */
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 200px; /* Adjust width as needed */
-  background-color: #f0f0f0; /* Adjust background color */
-  padding: 10px;
-  border-right: 1px solid #ddd; /* Optional border */
-}
-
-.sidebar-header {
-  display: flex;
-  align-items: center;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ddd; /* Optional border */
-}
-
-.sidebar-header a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
+  width: 250px; /* fixed width for sidebar */
+  height: 100vh;
+  background-color: #f5f5f5;
+  border-right: 1px solid #747474;
+  padding: 0;
 }
 
 .sidebar-list {
-  padding: 0;
-  margin: 0;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .sidebar-list li {
   margin-bottom: 5px;
 }
 
-.sidebar-list li.active {
-  background-color: #eee;
-}
-
-.sidebar-list li a {
-  text-decoration: none;
-  color: #000;
-  display: block;
+.sidebar-list a {
+  display: flex;
+  align-items: center;
   padding: 10px;
+  text-decoration: none;
+  color: black;
   transition: background-color 0.2s ease-in-out;
 }
 
-.sidebar-list li a:hover {
-  background-color: #ddd;
+.sidebar-list a:hover {
+  background-color: #958d8d8f;
 }
 
-.sidebar-list li a i {
+.sidebar-list a i {
   margin-right: 10px;
+  font-size: 1.2rem;
 }
 
-.collapse {
-  display: none;
+.sidebar-list a span {
+  font-size: 14px;
 }
 
-.collapse.show {
+.sidebar-sub-list {
+  list-style: none;
+  margin-left: 40px;
+  padding: 0;
   display: block;
+}
+
+.sidebar-sub-list li {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.sidebar-sub-list li a span {
+  padding: 0;
+}
+
+.sidebar-sub-list li a {
+  cursor: pointer;
+}
+
+.sidebar-sub-list a:active {
+  background-color: #5753532a;
+  border-left: 3px solid #2e2e2e;
+}
+
+/* UserDetails.css */
+.user-details-container {
+  margin-left: 250px; /* same width as the sidebar */
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.user-details {
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-details table th, .user-details table td {
+  border: 1px solid #bdc3c7;
+  padding: 8px;
+  text-align: left;
+}
+
+.user-details table th {
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+.user-details table tr:nth-child(even) {
+  background-color: #f2f2f2;
 }

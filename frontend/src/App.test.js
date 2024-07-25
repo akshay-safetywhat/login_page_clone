@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, cleanup } from '@testing-library/react';
 import App from './App';
+describe('',() => {
 
-test('renders learn react link', () => {
+
+test('should render app component', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const appElement = screen.findAllByRole('heading')
+  expect(appElement).toBeInTheDocument();
 });
+})

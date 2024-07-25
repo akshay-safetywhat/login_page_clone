@@ -114,3 +114,13 @@ class BlacklistedAccessToken(models.Model):
         # }
 #     }
 # ]
+
+
+# {
+#   "first_name": "Akshay",
+#   "last_name": "Sankar",
+#   "username": "akshay",
+#   "email": "akshay@email.com",
+#   "password": "akshay",
+#   "role": "Asso. Software Eng."
+# }

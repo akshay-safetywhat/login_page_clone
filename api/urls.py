@@ -3,6 +3,7 @@ from .views import AddUserAPIView, LoginAPIView, AllUsersAPIView, UserAPIView, L
 
 urlpatterns = [
     path('login/', LoginAPIView.as_view()),
+    # path('login/', login),
     path('user/', UserAPIView.as_view()),
     path('all-users/', AllUsersAPIView.as_view()),
     path('adduser/', AddUserAPIView.as_view()),

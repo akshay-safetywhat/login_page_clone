@@ -42,9 +42,9 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <div>
+      <div className='hello'>
         <h1>👋</h1>
-        <h1 className='hello'>Hello !</h1>
+        <h1 >Hello !</h1>
       </div>
       <div className="tiles">
         {data.map((tile, index) => (

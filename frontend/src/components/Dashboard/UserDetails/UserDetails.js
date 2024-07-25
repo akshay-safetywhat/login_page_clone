@@ -2,9 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './UserDetails.css'; // Import CSS file
 
-const UserDetails = () => {
-  const location = useLocation();
-  const { userData } = location.state || {};
+const UserDetails = ({userData}) => {
 
   return (
     <div className="user-details">

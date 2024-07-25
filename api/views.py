@@ -5,13 +5,9 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
 from rest_framework import status
-from django.shortcuts import get_object_or_404
 from django.contrib.auth import authenticate
 from rest_framework.authentication import get_authorization_header
 from rest_framework.exceptions import APIException, AuthenticationFailed
-# from rest_framework.authentication import TokenAuthentication, BasicAuthentication
-from rest_framework_simplejwt.authentication import JWTAuthentication
-# from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken, OutstandingToken
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from .serializers import UserSerializer, ProfileSerializer, BlacklistedAccessTokenSerializer, UserOptionsSerializer
 from .models import CustomUser, BlacklistedAccessToken, UserOptions
@@ -44,7 +40,7 @@ class AddUserAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginAPIView(APIView):
-    permission_classes = [AllowAny]
+    # permission_classes = [AllowAny]
     @swagger_auto_schema(
         request_body=openapi.Schema(
             method='post',
@@ -57,7 +53,6 @@ class LoginAPIView(APIView):
         ),
         responses={200: 'Token generated successfully', 400: 'Invalid credentials'}
     )
-    # @permission_classes([AllowAny])
     def post(self, request):
         username = request.data.get('username')
         password = request.data.get('password')
@@ -71,6 +66,23 @@ class LoginAPIView(APIView):
             })
         else:
             return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+# @api_view(['POST'])
+# # @permission_classes([])
+# def login(request):
+#     if request.method == 'POST':
+#         username = request.data.get('username')
+#         password = request.data.get('password')
+#         user = authenticate(username=username, password=password)
+#         # print(user)
+#         if user is not None:
+#             refresh = RefreshToken.for_user(user)
+#             return Response({
+#                 'access': str(refresh.access_token),
+#                 'refresh': str(refresh),
+#             })
+#         else:
+#             return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+
 
 class UserAPIView(APIView):
     authentication_classes = [CustomJWTAuthentication]
