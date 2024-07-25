@@ -1,0 +1,21 @@
+.hello {
+    font-weight: bold;
+    color: aliceblue;
+    align-items: center;
+}
+
+/* body {
+  height: auto;
+  background-color: RGB(46, 52, 64);
+  } */
+
+.home-page {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  padding: 40px;
+  height: 100%;
+  background-color: RGB(46, 52, 64);
+  /* height: auto; */
+  overflow: auto;
+}

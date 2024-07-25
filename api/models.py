@@ -61,3 +61,66 @@ class BlacklistedAccessToken(models.Model):
 #         },
 #     }
 # }
+
+
+# [
+#     {
+#         "title": "Configure",
+#         "description": "Configure app settings for customized use",
+        # "value": {
+        #     "Labels": [],
+        #     "Access Policies": [
+        #         "Gate access",
+        #         "Tenant Admin Policy"
+        #     ],
+        #     "User Management": [
+        #         "User",
+        #         "User roles",
+        #         "User groups"
+        #     ]
+        # }
+#     },
+#     {
+#         "title": "Settings",
+#         "description": "Settings for configuring application preferences and options.",
+        # "value": {
+        #     "General Settings": [
+        #         "Change language",
+        #         "Adjust notifications",
+        #         "Modify theme"
+        #     ]
+        # }
+#     },
+#     {
+#         "title": "IoT",
+#         "description": "Functionality related to IoT devices and management.",
+        # "value": {
+        #     "Device Management": [
+        #         "Register new devices",
+        #         "Monitor device status",
+        #         "Configure device settings"
+        #     ]
+        # }
+#     },
+#     {
+#         "title": "Task Manager",
+#         "description": "Tools and features for managing tasks and workflows.",
+        # "value": {
+        #     "Task Management": [
+        #         "Create new tasks",
+        #         "Assign tasks to users",
+        #         "Track task progress"
+        #     ]
+        # }
+#     }
+# ]
+
+
+# {
+#   "first_name": "Akshay",
+#   "last_name": "Sankar",
+#   "username": "akshay",
+#   "email": "akshay@email.com",
+#   "password": "akshay",
+#   "role": "Asso. Software Eng."
+# }
